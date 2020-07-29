@@ -20,22 +20,20 @@ function submitBtn(){
     var screenInput = document.getElementById("screen-input").value;
     if(randomNumber == screenInput){
         document.getElementById("pinMatchShow").style.display = 'block';
+        
     }
     else{
         document.getElementById("pinMatchNotShow").style.display = 'block';
-
-        var screen = document.getElementById("screen-input").value;
-        var leftValue = screen.slice(0, screen.length-1);
-        document.getElementById("screen-input").value = leftValue;
-
-        var leftTry = document.getElementById("left").innerText;
-        var left = parseInt(leftTry);
-        var i = left-1;
-        document.getElementById("left").innerText = i+"try left";
-        document.getElementById("left").style.display = 'block';
-        if(i <0){
-            document.getElementById("left").innerText = 0+"try left";
-        }
+         
+            var leftTry = document.getElementById("left").innerText;
+            var left = parseInt(leftTry);
+            var i = left-1;
+            document.getElementById("left").innerText = i+"try left";
+            document.getElementById("left").style.display = 'block';
+            if(i <0){
+                document.getElementById("left").innerText = 0+"try left";
+                submit.setAttribute('disabled', 'disabled');
+            }    
         
         }
-    }
+}
